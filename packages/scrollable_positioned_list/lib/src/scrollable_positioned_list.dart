@@ -293,6 +293,14 @@ class ScrollOffsetController {
     );
   }
 
+  ScrollPosition? get position {
+    final scrollableListState = _scrollableListState;
+    if (scrollableListState == null) {
+      return null;
+    }
+    return scrollableListState.primary.scrollController.position;
+  }
+
   _ScrollablePositionedListState? _scrollableListState;
 
   void _attach(_ScrollablePositionedListState scrollableListState) {
